@@ -1763,3 +1763,15 @@ textarea {
     height: 46px;
   }
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: block;
+  width: 118px;
+  height: auto;
+  object-fit: contain;
+}
