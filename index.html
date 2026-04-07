@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neear Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="overlay" class="overlay hidden"></div>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      Parrainez un proche et offrez-lui la carte Neear offerte. En retour, bénéficiez de 20% de réduction sur votre abonnement annuel.
+      <button class="topbar-close" id="closeTopbar" aria-label="Fermer la bannière">&times;</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="https://www.neear.fr/" target="_blank" rel="noreferrer">
+        <span class="brand-mark"></span>
+        <span class="brand-name">neear</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="https://www.neear.fr/" target="_blank" rel="noreferrer">Accueil</a>
+        <a href="#profils">Profils</a>
+        <a href="#avis">Avis</a>
+        <a href="#posts">Posts</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="scoreBtn" class="score-btn" type="button">Score</button>
+        <button id="joinBtn" class="join-btn" type="button">Rejoindre</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill-label">COMMUNAUTÉ NEEAR</span>
+
+          <h1>
+            Le mur vivant<br />
+            dédié<br />
+            aux <span>bâtisseurs</span><br />
+            de la communauté<br />
+            Neear.
+          </h1>
+
+          <p class="hero-subtext">
+            Plongez au cœur de la communauté Neear : découvrez les membres engagés, leurs actions et leurs retours.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#profils" class="black-pill">Voir les profils</a>
+            <a href="#avis" class="lime-pill">Lire les avis</a>
+          </div>
+        </div>
+
+        <div class="hero-featured-wrap">
+          <div id="featuredProfile" class="hero-featured-card"></div>
+          <div class="top-action-bubble">Top action</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section">
+  <div class="container">
+    <span class="pill-label white-pill">COMMENT APPARAÎTRE</span>
+
+    <h2>Comment gagner sa place sur Neear ?</h2>
+
+    <p class="how-subtext">
+      Chaque action compte. Plus vous participez à faire connaître, améliorer ou recommander Neear,
+      plus vous gagnez en visibilité.
+    </p>
+
+    <div class="how-grid">
+      <div class="how-card">
+        <h3>Parrainer</h3>
+        <p>Invitez un nouveau membre</p>
+        <span>+50 pts</span>
+      </div>
+
+      <div class="how-card">
+        <h3>Donner un avis</h3>
+        <p>Partagez votre expérience</p>
+        <span>+30 pts</span>
+      </div>
+
+      <div class="how-card">
+        <h3>Partager</h3>
+        <p>Parlez de Neear</p>
+        <span>+20 pts</span>
+      </div>
+
+      <div class="how-card">
+        <h3>Feedback</h3>
+        <p>Aidez à améliorer</p>
+        <span>+15 pts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="leaderboard-section">
+  <div class="container">
+    <span class="pill-label white-pill">TOP MEMBRES</span>
+
+    <h2>Les membres les plus engagés Neear.</h2>
+
+    <div id="leaderboard" class="leaderboard"></div>
+  </div>
+</section>
+
+    <section class="profiles-section" id="profils">
+      <div class="container profiles-layout">
+        <div class="profiles-left">
+          <span class="pill-label white-pill">LES PROFILS</span>
+
+          <h2>
+            Les profils<br />
+            engagés de la<br />
+            <span>communauté</span><br />
+            Neear
+          </h2>
+
+          <p>
+            Les profils actifs de la communauté Neear.
+          </p>
+
+          <form id="searchForm" class="profile-search-bar">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Rechercher un pionnier..."
+              autocomplete="off"
+            />
+            <button type="submit">Entrée</button>
+          </form>
+        </div>
+
+        <div class="profiles-right">
+          <div class="profiles-divider"></div>
+
+          <div class="profiles-marquee">
+            <div class="marquee-row marquee-row-right" id="profilesRowTop"></div>
+            <div class="marquee-row marquee-row-left" id="profilesRowBottom"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section" id="avis">
+      <div class="container reviews-layout">
+        <div class="reviews-head">
+          <div>
+            <span class="pill-label white-pill">LES AVIS</span>
+
+            <h2>
+              Ce que les<br />
+              utilisateurs pensent vraiment.
+            </h2>
+
+            <p>
+              Consultez les avis laissés par les utilisateurs et les retours de la communauté.
+            </p>
+          </div>
+
+          <a
+            class="black-pill review-cta"
+            href="https://search.google.com/local/writereview?placeid=ChIJ_06a56OvthIRHA1d6rBPwa0"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Rédigez un avis
+          </a>
+        </div>
+
+        <div class="reviews-slider">
+          <div id="reviewsTrack" class="reviews-track"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="posts-section" id="posts">
+      <div class="container posts-head">
+        <span class="pill-label white-pill">LES POSTS</span>
+
+        <h2>
+          Les posts de la<br />
+          communauté Neear.
+        </h2>
+
+        <p>
+          Explorez les contenus partagés par les membres et suivez l’activité de la communauté.
+        </p>
+      </div>
+
+      <div class="posts-fall-zone" id="postsFallZone"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-wrapper">
+      <div class="footer-card footer-left">
+        <div class="footer-mission">
+          <h2>Notre mission</h2>
+          <p>
+            Nous sommes trois fondateurs convaincus qu’une poignée de main peut tout changer.
+            Neear, c’est notre réponse à toutes les rencontres qu’on oublie, les contacts qu’on égare
+            et les opportunités qui s’évaporent. Transformer chaque rencontre en opportunité, c’est
+            notre obsession.
+          </p>
+          <p class="footer-signature">Matthieu, Baptiste &amp; Edith</p>
+        </div>
+
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="TikTok">♪</a>
+        </div>
+
+        <div class="footer-logo-big">neear</div>
+      </div>
+
+      <div class="footer-card footer-right">
+        <div class="footer-newsletter">
+          <h3>Tips, promos et nouveautés<br />dans votre boîte mail</h3>
+          <form class="footer-newsletter-form">
+            <input type="email" placeholder="bonjour@maboite.com" />
+            <button type="submit">→</button>
+          </form>
+        </div>
+
+        <div class="footer-links-grid">
+          <div>
+            <h4>NEEAR</h4>
+            <ul>
+              <li><a href="https://www.neear.fr/" target="_blank" rel="noreferrer">Accueil</a></li>
+              <li><a href="#">Documentation ↗</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#" id="footerLoginLink">Se connecter</a></li>
+              <li><a href="#" id="footerRegisterLink">Créer un compte</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>LEGAL</h4>
+            <ul>
+              <li><a href="#">Mentions légales</a></li>
+              <li><a href="#">CGU</a></li>
+              <li><a href="#">CGV</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Politique de confidentialité</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="footer-copy">© 2026 Neear. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="authModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" data-close="authModal" aria-label="Fermer">&times;</button>
+
+      <div class="modal-tabs">
+        <button id="tabLogin" class="tab active" type="button">Connexion</button>
+        <button id="tabRegister" class="tab" type="button">Inscription</button>
+      </div>
+
+      <form id="loginForm" class="modal-form">
+        <h3>Se connecter</h3>
+        <input id="loginEmail" type="email" placeholder="Email" required />
+        <input id="loginPassword" type="password" placeholder="Mot de passe" required />
+        <button class="modal-submit" type="submit">Connexion</button>
+        <p id="loginMessage" class="form-message"></p>
+      </form>
+
+      <form id="registerForm" class="modal-form hidden">
+        <h3>Créer un compte</h3>
+        <input id="registerName" type="text" placeholder="Nom complet" required />
+        <input id="registerRole" type="text" placeholder="Métier / rôle" required />
+        <input id="registerEmail" type="email" placeholder="Email" required />
+        <input id="registerPassword" type="password" placeholder="Mot de passe" required />
+
+        <label class="checkbox-line">
+          <input id="registerVisible" type="checkbox" />
+          Être visible sur le site
+        </label>
+
+        <button class="modal-submit" type="submit">Inscription</button>
+        <p id="registerMessage" class="form-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="accountModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" data-close="accountModal" aria-label="Fermer">&times;</button>
+      <div id="accountContent"></div>
+    </div>
+  </div>
+
+  <div id="scoreModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" data-close="scoreModal" aria-label="Fermer">&times;</button>
+      <h3>Comment avoir des points ?</h3>
+
+      <div class="score-list">
+        <button class="score-action" data-points="50" data-label="Parrainer un nouvel utilisateur" type="button">
+          Parrainer un nouvel utilisateur <span>+50</span>
+        </button>
+        <button class="score-action" data-points="40" data-label="Abonnement premium Pionnier" type="button">
+          Abonnement premium Pionnier <span>+40</span>
+        </button>
+        <button class="score-action" data-points="30" data-label="Laisser un avis" type="button">
+          Laisser un avis <span>+30</span>
+        </button>
+        <button class="score-action" data-points="20" data-label="Partager un post LinkedIn" type="button">
+          Partager un post LinkedIn <span>+20</span>
+        </button>
+        <button class="score-action" data-points="15" data-label="Donner un feedback produit" type="button">
+          Donner un feedback produit <span>+15</span>
+        </button>
+        <button class="score-action" data-points="10" data-label="Créer un compte Neear" type="button">
+          Créer un compte Neear <span>+10</span>
+        </button>
+      </div>
+
+      <p id="scoreMessage" class="form-message"></p>
+    </div>
+  </div>
+
+  <div id="searchModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" data-close="searchModal" aria-label="Fermer">&times;</button>
+      <div id="searchResultContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
